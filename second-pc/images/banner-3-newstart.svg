@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-label="새싹이 자라는 모니터 앞에서 일하는 사람들">
+  <rect width="800" height="600" fill="#dfe9e0"/>
+  <circle cx="660" cy="140" r="58" fill="#c58b2a"/>
+  <!-- 언덕과 나무 -->
+  <path d="M0 470 C160 400 300 420 430 450 C560 480 680 430 800 410 V600 H0 z" fill="#2f6b4c"/>
+  <path d="M0 520 C200 470 420 520 800 480 V600 H0 z" fill="#1f4a35"/>
+  <rect x="86" y="300" width="22" height="130" fill="#1f4a35"/>
+  <circle cx="97" cy="270" r="64" fill="#2f6b4c"/>
+  <circle cx="60" cy="310" r="40" fill="#2f6b4c"/>
+  <circle cx="140" cy="312" r="38" fill="#1f4a35"/>
+  <!-- 책상 + 모니터 -->
+  <rect x="210" y="410" width="460" height="18" rx="6" fill="#d9c9a8"/>
+  <rect x="240" y="428" width="14" height="86" fill="#d9c9a8"/>
+  <rect x="626" y="428" width="14" height="86" fill="#d9c9a8"/>
+  <rect x="330" y="220" width="260" height="165" rx="12" fill="#1f4a35"/>
+  <rect x="346" y="236" width="228" height="133" rx="4" fill="#fffdf9"/>
+  <!-- 화면 속 새싹 -->
+  <rect x="456" y="320" width="8" height="36" fill="#2f6b4c"/>
+  <path d="M460 322 C436 316 424 296 428 276 C452 280 464 298 460 322 z" fill="#2f6b4c"/>
+  <path d="M460 322 C484 312 498 294 494 272 C470 278 456 298 460 322 z" fill="#1f4a35"/>
+  <rect x="440" y="385" width="40" height="25" fill="#1f4a35"/>
+  <!-- 사람 둘 -->
+  <circle cx="270" cy="330" r="24" fill="#c58b2a"/>
+  <path d="M236 410 V372 C236 352 252 344 270 344 C288 344 304 352 304 372 V410 z" fill="#2f6b4c"/>
+  <circle cx="650" cy="332" r="24" fill="#d9c9a8"/>
+  <path d="M616 410 V374 C616 354 632 346 650 346 C668 346 684 354 684 374 V410 z" fill="#fffdf9"/>
+</svg>

@@ -39,3 +39,7 @@
 ## 2단계(AI) 준비
 데이터 읽기/쓰기는 `app.js`의 `store` 한 곳에 모여 있어, 나중에 서버를 붙일 때 이 부분만 바꾸면 됩니다.
 AI의 API 키는 화면 코드에 넣지 말고 반드시 서버에 보관하세요.
+
+## 배포
+- 사이트: https://allinone-memo-dusky.vercel.app
+- GitHub에 올리면 Vercel이 자동으로 다시 배포합니다.

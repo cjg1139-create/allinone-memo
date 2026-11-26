@@ -52,10 +52,6 @@
       return '<div class="partner">' + (p ? esc(p) : "파트너 로고") + '</div>';
     }).join("");
 
-    // 아직 없는 페이지 링크는 안내만
-    document.querySelectorAll("[data-soon]").forEach(function (a) {
-      a.addEventListener("click", function (e) { e.preventDefault(); alert(a.dataset.soon + "은(는) 준비 중입니다."); });
-    });
     $("#newsletter").addEventListener("click", function (e) { e.preventDefault(); alert("뉴스레터 신청은 준비 중입니다."); });
   }
 
@@ -78,6 +74,8 @@
       b.addEventListener("click", function () { setType(b.dataset.type); history.replaceState(null, "", "#" + b.dataset.type); });
     });
     setType(location.hash === "#npo" ? "npo" : "company");
+    // 구글 폼이 연결되면 '시연 화면' 안내를 숨김
+    if ((window.APPLY || {}).formUrl) $("#demoHint").classList.add("hidden");
 
     function mark(id, bad) { $(id).closest(".field").classList.toggle("bad", bad); return bad; }
     form.addEventListener("submit", function (e) {
@@ -93,9 +91,34 @@
       var noConsent = !$("#consent").checked;
       $("#consentErr").classList.toggle("bad", noConsent);
       if (bad.indexOf(true) !== -1 || noConsent) return;
-      // ※ 여기서는 저장하지 않습니다. 저장 방식이 정해지면 이 자리에 연결합니다.
-      form.style.display = "none"; $("#done").classList.add("show");
-      window.scrollTo({ top: 0, behavior: "smooth" });
+      var cfg = window.APPLY || {};
+      function finish(demo) {
+        if (demo) {
+          $("#doneTitle").textContent = "입력이 확인되었습니다";
+          $("#doneText").innerHTML = "현재는 시연 화면이라 신청 내용이 저장되거나 전송되지 않았습니다.<br>저장 방식은 팀이 정한 뒤 연결합니다.";
+        }
+        form.style.display = "none"; $("#done").classList.add("show");
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+      // 구글 폼 주소가 비어 있으면 시연 모드 (config.js 참고)
+      if (!cfg.formUrl) { finish(true); return; }
+
+      var f = cfg.fields || {}, body = new URLSearchParams();
+      body.append(f.type, type === "company" ? "기업 PC 나눔" : "비영리단체 대여");
+      body.append(f.org, $("#org").value.trim());
+      body.append(f.name, $("#name").value.trim());
+      body.append(f.phone, $("#phone").value.trim());
+      body.append(f.email, $("#email").value.trim());
+      body.append(f.msg, $("#msg").value.trim());
+      body.append(f.consent, "동의함");
+
+      var btn = $("#submitBtn"), err = $("#submitErr");
+      btn.disabled = true; btn.textContent = "보내는 중..."; err.classList.remove("show");
+      // 구글 폼은 응답 내용을 돌려주지 않으므로(no-cors) 네트워크 오류만 실패로 처리합니다.
+      fetch(cfg.formUrl, { method: "POST", mode: "no-cors", body: body })
+        .then(function () { finish(false); })
+        .catch(function () { err.classList.add("show"); })
+        .then(function () { btn.disabled = false; btn.textContent = "신청서 보내기"; });
     });
   }
 })();

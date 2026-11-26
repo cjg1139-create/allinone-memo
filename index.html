@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>올인원 메모장</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- ===== 상단 메뉴 (G: 화면 이동 탭 + 다크 모드 버튼) ===== -->
+  <header class="topbar">
+    <div class="topbar-inner">
+      <h1 class="logo">📒 올인원 메모장</h1>
+      <nav class="tabs" aria-label="화면 이동">
+        <button class="tab" data-view="dashboard">🏠 <span>홈</span></button>
+        <button class="tab" data-view="memo">📝 <span>메모</span></button>
+        <button class="tab" data-view="todo">✅ <span>할 일</span></button>
+        <button class="tab" data-view="calendar">📅 <span>캘린더</span></button>
+      </nav>
+      <button id="theme-btn" class="icon-btn" aria-label="다크 모드 전환" title="다크 모드 전환">🌙</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- 개인정보 안내 (비기능 요구사항) -->
+    <p class="privacy-note">🔒 주민등록번호, 계좌번호, 비밀번호 같은 민감한 정보는 적지 마세요. 데이터는 이 브라우저에만 저장돼요.</p>
+
+    <!-- ===== 1. 대시보드 ===== -->
+    <section id="view-dashboard" class="view">
+      <div class="hello">
+        <h2 id="dash-title">안녕하세요!</h2>
+        <p id="dash-date" class="muted"></p>
+      </div>
+      <div class="grid-3">
+        <article class="card">
+          <h3>📅 오늘의 일정</h3>
+          <div id="dash-events"></div>
+        </article>
+        <article class="card">
+          <h3>✅ 오늘의 할 일</h3>
+          <div id="dash-todos"></div>
+        </article>
+        <article class="card">
+          <h3>📝 최근 메모</h3>
+          <div id="dash-memos"></div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===== 2. 메모 ===== -->
+    <section id="view-memo" class="view" hidden>
+      <div class="view-head">
+        <h2>📝 메모</h2>
+        <button id="memo-new" class="btn primary">+ 새 메모</button>
+      </div>
+      <input id="memo-search" class="input" type="search" placeholder="🔍 제목·본문·태그에서 검색" aria-label="메모 검색">
+      <p id="memo-count" class="muted small"></p>
+      <div id="memo-list" class="memo-grid"></div>
+    </section>
+
+    <!-- ===== 3. 할 일 ===== -->
+    <section id="view-todo" class="view" hidden>
+      <div class="view-head"><h2>✅ 할 일</h2></div>
+      <form id="todo-form" class="card todo-form">
+        <input id="todo-text" class="input" type="text" placeholder="할 일을 입력하세요" required maxlength="100" aria-label="할 일">
+        <input id="todo-due" class="input" type="date" aria-label="마감일">
+        <select id="todo-priority" class="input" aria-label="우선순위">
+          <option value="high">🔴 높음</option>
+          <option value="mid" selected>🟡 보통</option>
+          <option value="low">🟢 낮음</option>
+        </select>
+        <button class="btn primary" type="submit">추가</button>
+      </form>
+      <div class="card">
+        <div class="progress-row">
+          <strong id="todo-progress-text">0개 중 0개 완료</strong>
+          <div class="filters" role="group" aria-label="필터">
+            <button class="chip-btn" data-filter="all">전체</button>
+            <button class="chip-btn" data-filter="active">진행 중</button>
+            <button class="chip-btn" data-filter="done">완료</button>
+          </div>
+        </div>
+        <div class="bar"><div id="todo-bar" class="bar-fill"></div></div>
+        <ul id="todo-list" class="todo-list"></ul>
+      </div>
+    </section>
+
+    <!-- ===== 4. 캘린더 ===== -->
+    <section id="view-calendar" class="view" hidden>
+      <div class="view-head">
+        <h2>📅 캘린더</h2>
+        <div class="cal-nav">
+          <button id="cal-prev" class="icon-btn" aria-label="이전 달">‹</button>
+          <strong id="cal-title"></strong>
+          <button id="cal-next" class="icon-btn" aria-label="다음 달">›</button>
+          <button id="cal-today" class="btn small">오늘</button>
+        </div>
+      </div>
+      <div class="cal-layout">
+        <div class="card cal-card">
+          <div class="cal-week"><span class="sun">일</span><span>월</span><span>화</span><span>수</span><span>목</span><span>금</span><span class="sat">토</span></div>
+          <div id="cal-grid" class="cal-grid"></div>
+          <p class="legend small muted"><i class="dot d-event"></i>일정 <i class="dot d-todo"></i>할 일 마감 <i class="dot d-memo"></i>메모</p>
+        </div>
+        <aside id="cal-detail" class="card cal-detail"></aside>
+      </div>
+    </section>
+
+    <footer class="footer small muted">
+      <button id="reset-btn" class="link-btn">모든 데이터 지우기</button>
+    </footer>
+  </main>
+
+  <!-- ===== 메모 작성/수정 창 ===== -->
+  <dialog id="memo-dialog">
+    <form id="memo-form" method="dialog" class="dialog-form">
+      <h3 id="memo-dialog-title">새 메모</h3>
+      <label>제목<input id="memo-title" class="input" type="text" maxlength="60" required></label>
+      <label>본문<textarea id="memo-body" class="input" rows="6"></textarea></label>
+      <div class="row2">
+        <label>태그<input id="memo-tag" class="input" type="text" maxlength="12" placeholder="예: 아이디어"></label>
+        <label>연결할 날짜<input id="memo-date" class="input" type="date"></label>
+      </div>
+      <fieldset class="colors"><legend>색상</legend>
+        <label><input type="radio" name="memo-color" value="pink" checked><span class="swatch c-pink"></span></label>
+        <label><input type="radio" name="memo-color" value="yellow"><span class="swatch c-yellow"></span></label>
+        <label><input type="radio" name="memo-color" value="green"><span class="swatch c-green"></span></label>
+        <label><input type="radio" name="memo-color" value="blue"><span class="swatch c-blue"></span></label>
+        <label><input type="radio" name="memo-color" value="purple"><span class="swatch c-purple"></span></label>
+      </fieldset>
+      <label class="check"><input id="memo-pinned" type="checkbox"> 📌 상단에 고정</label>
+      <div class="dialog-actions">
+        <button type="button" id="memo-delete" class="btn danger">삭제</button>
+        <span class="spacer"></span>
+        <button type="button" id="memo-cancel" class="btn">취소</button>
+        <button type="submit" class="btn primary">저장</button>
+      </div>
+    </form>
+  </dialog>
+
+  <!-- ===== 일정 추가/수정 창 ===== -->
+  <dialog id="event-dialog">
+    <form id="event-form" method="dialog" class="dialog-form">
+      <h3 id="event-dialog-title">새 일정</h3>
+      <label>제목<input id="event-title" class="input" type="text" maxlength="60" required></label>
+      <div class="row2">
+        <label>날짜<input id="event-date" class="input" type="date" required></label>
+        <label>시간(선택)<input id="event-time" class="input" type="time"></label>
+      </div>
+      <label>메모(선택)<input id="event-note" class="input" type="text" maxlength="100"></label>
+      <div class="dialog-actions">
+        <button type="button" id="event-delete" class="btn danger">삭제</button>
+        <span class="spacer"></span>
+        <button type="button" id="event-cancel" class="btn">취소</button>
+        <button type="submit" class="btn primary">저장</button>
+      </div>
+    </form>
+  </dialog>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <!-- 불러오는 순서가 중요해요: app.js(공통)를 가장 먼저 -->
+  <script src="app.js"></script>
+  <script src="memo.js"></script>
+  <script src="todo.js"></script>
+  <script src="calendar.js"></script>
+  <script src="dashboard.js"></script>
+  <script>initApp();</script>
+</body>
+</html>

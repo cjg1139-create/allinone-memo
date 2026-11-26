@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>두번째 PC — 회사에서 은퇴한 PC가, 누군가의 첫 업무 PC가 됩니다</title>
+<meta name="description" content="기업의 폐PC를 수거·데이터 삭제·정비해 비영리단체에 낮은 대여료로 연결하는 PC 나눔 서비스">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&family=Noto+Serif+KR:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- 6-1 상단 메뉴 -->
+<header class="top">
+  <div class="wrap">
+    <a href="#top" class="logo">두번째 PC</a>
+    <button class="burger" id="burger" aria-label="메뉴 열기">☰</button>
+    <nav class="menu" id="menu">
+      <a class="link" href="#structure">나눔 구조</a>
+      <a class="link" href="#news">소식</a>
+      <a class="link" href="#campaign">캠페인</a>
+      <a class="link" href="#notice">공지</a>
+      <a class="btn" href="apply.html#company">PC 나누기</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- 6-2 메인 배너 -->
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <h1>회사에서 은퇴한 PC가,<br>누군가의 첫 업무 PC가 됩니다</h1>
+      <p>수거와 데이터 삭제는 저희가 맡을게요.<br>기업은 PC와 작은 나눔만 보내 주세요.</p>
+      <a class="btn light" href="#structure">자세히 보기</a>
+    </div>
+    <div class="slider" id="slider">
+      <div class="slide on">배너 사진 1<small>사진이 준비되면 교체합니다</small></div>
+      <div class="slide">배너 사진 2<small>사진이 준비되면 교체합니다</small></div>
+      <div class="slide">배너 사진 3<small>사진이 준비되면 교체합니다</small></div>
+      <div class="dots" id="dots"></div>
+    </div>
+  </div>
+</section>
+
+<!-- 6-3 바로가기 카드 3개 -->
+<div class="shortcut">
+  <div class="wrap grid g3">
+    <div class="card">
+      <div class="icon">🏢</div>
+      <h3>기업 PC 나눔</h3>
+      <p>수거·데이터 삭제 무료</p>
+      <a class="go" href="apply.html#company">함께하기 →</a>
+    </div>
+    <div class="card">
+      <div class="icon">🤝</div>
+      <h3>비영리단체 PC 대여</h3>
+      <p>기업 후원으로 낮아진 대여료</p>
+      <a class="go" href="apply.html#npo">신청하기 →</a>
+    </div>
+    <div class="card">
+      <div class="icon">📊</div>
+      <h3>ESG 나눔 리포트</h3>
+      <p>나눔 결과를 한눈에</p>
+      <a class="go" href="#report">살펴보기 →</a>
+    </div>
+  </div>
+</div>
+
+<!-- 6-4 나눔 구조 -->
+<section id="structure" class="struct">
+  <div class="wrap">
+    <h2 class="sec-title">기업의 작은 나눔이, 단체의 대여료를 낮춥니다</h2>
+    <p class="sec-sub">처리 비용을 내는 것이 아니라, PC가 다시 쓰이도록 함께 후원합니다.</p>
+    <div class="grid g3">
+      <div class="card">
+        <span class="who">기업이 보내는 것</span>
+        <h3>쓰지 않는 PC + 나눔 후원금</h3>
+        <p>PC가 다시 쓰이도록 함께 후원합니다.</p>
+      </div>
+      <div class="card">
+        <span class="who">두번째 PC가 하는 일</span>
+        <h3>무료 수거 · 데이터 삭제 · 정비</h3>
+        <p>기업별 데이터 삭제 증명서를 발급합니다.</p>
+      </div>
+      <div class="card">
+        <span class="who">비영리단체가 받는 것</span>
+        <h3>아주 낮은 대여료의 PC</h3>
+        <p>기업 후원 덕분에 대여료 부담이 크게 줄어듭니다.</p>
+      </div>
+    </div>
+    <p class="note">기본 금액 <span class="tbd">[금액] 미정</span> · 후원 적용 금액 <span class="tbd">[금액] 미정</span></p>
+  </div>
+</section>
+
+<!-- 6-5 소식 -->
+<section id="news" class="alt">
+  <div class="wrap">
+    <h2 class="sec-title">두번째 PC 소식</h2>
+    <p class="sec-sub">결과보고부터 정비 일지까지, 나눔의 과정을 기록합니다.</p>
+    <div class="grid g4" id="newsList"></div>
+    <div class="more"><a href="#notice">전체 보기 →</a></div>
+  </div>
+</section>
+
+<!-- 6-6 운영 원칙 배너 -->
+<section id="principle" class="banner">
+  <div class="wrap">
+    <h2>버려지는 PC 한 대가 아니라,<br>이어지는 활동 하나를 봅니다</h2>
+    <p>나눔 후원금이 어디에 쓰였는지 투명하게 공개합니다.</p>
+    <a class="btn light" href="#report">운영 원칙 보기</a>
+  </div>
+</section>
+
+<!-- 6-7 캠페인 -->
+<section id="campaign">
+  <div class="wrap">
+    <h2 class="sec-title">캠페인</h2>
+    <p class="sec-sub">PC 나눔이 이어지는 여러 가지 방법입니다.</p>
+    <div class="grid g3">
+      <div class="card"><div class="icon">💼</div><h3>사무실 PC 나눔 캠페인</h3><p>사무실에서 쓰던 PC를 모아 나눕니다.</p></div>
+      <div class="card"><div class="icon">🏫</div><h3>학교·기관 PC 나눔</h3><p>학교와 기관의 PC도 다시 쓰이게 합니다.</p></div>
+      <div class="card"><div class="icon">🌏</div><h3>해외 기증 연계 <span class="badge">준비 중</span></h3><p>진행 여부는 팀에서 결정합니다.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 6-8 가치 소개 -->
+<section class="alt">
+  <div class="wrap">
+    <h2 class="sec-title">PC 나눔을 넘어 가치를 실현합니다</h2>
+    <p class="sec-sub">&nbsp;</p>
+    <div class="grid g4">
+      <div class="card value"><div class="icon">♻️</div><h3>자원순환</h3><p>쓰던 PC가 버려지지 않고 다시 쓰입니다.</p></div>
+      <div class="card value"><div class="icon">🌱</div><h3>기업 나눔</h3><p>기업은 ESG 나눔 실적을 남깁니다.</p></div>
+      <div class="card value"><div class="icon">🧡</div><h3>비영리 활동 지원</h3><p>단체의 PC 비용 부담을 덜어 줍니다.</p></div>
+      <div class="card value"><div class="icon">🔒</div><h3>정보 보안</h3><p>데이터를 지우고 증명서를 발급합니다.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 6-9 후기 -->
+<section id="reviews">
+  <div class="wrap">
+    <h2 class="sec-title">함께한 사람들의 이야기</h2>
+    <p class="sec-sub">실제 후기가 생기면 content.js에 입력해 주세요.</p>
+    <div class="grid g3" id="reviewList"></div>
+  </div>
+</section>
+
+<!-- ESG 나눔 리포트 / 운영 원칙·후원금 사용 내역 (1단계: 사람이 정리해 공개) -->
+<section id="report" class="alt">
+  <div class="wrap grid g3" style="grid-template-columns:1fr 1fr;">
+    <div class="card report-box">
+      <h3>ESG 나눔 리포트</h3>
+      <p>나눔 결과를 정리해 이곳에 공개합니다.</p>
+      <p style="margin-top:12px"><span class="tbd">준비 중</span></p>
+    </div>
+    <div class="card report-box">
+      <h3>운영 원칙 · 후원금 사용 내역</h3>
+      <p>후원금은 PC 정비와 단체 대여료 지원에 쓰이며, 사용 내역은 공개를 원칙으로 합니다.</p>
+      <p style="margin-top:12px"><span class="tbd">내용 준비 중</span></p>
+    </div>
+  </div>
+</section>
+
+<!-- 6-10 공지·언론보도 -->
+<section id="notice">
+  <div class="wrap">
+    <h2 class="sec-title">공지 · 언론보도</h2>
+    <p class="sec-sub">&nbsp;</p>
+    <div class="grid g4" id="noticeList"></div>
+  </div>
+</section>
+
+<!-- 6-11 하단 링크 + 파트너 -->
+<section class="alt">
+  <div class="wrap">
+    <div class="links">
+      <a class="btn ghost" href="#structure">기업 나눔 가이드 보기</a>
+      <a class="btn ghost" href="#" id="newsletter">뉴스레터 신청</a>
+    </div>
+    <div class="partners" id="partnerList"></div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks">
+      <a href="#" data-soon="이용약관">이용약관</a>
+      <a href="#" data-soon="개인정보처리방침">개인정보처리방침</a>
+      <a href="#report">후원금 사용 내역</a>
+    </div>
+    <p>사업자 정보: 미정 (확정되면 이곳에 입력)</p>
+    <p>© 두번째 PC</p>
+  </div>
+</footer>
+
+<a class="btn accent fab" href="apply.html#company">PC 나누기</a>
+
+<script src="content.js"></script>
+<script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-label="기업 나눔: PC가 담긴 상자와 새싹">
+  <rect width="800" height="600" fill="#dfe9e0"/>
+  <rect y="460" width="800" height="140" fill="#d9c9a8"/>
+  <rect x="120" y="300" width="250" height="170" fill="#c58b2a"/>
+  <rect x="120" y="300" width="250" height="34" fill="#a8721f"/>
+  <rect x="226" y="300" width="38" height="170" fill="#1f4a35"/>
+  <rect x="330" y="150" width="260" height="170" rx="10" fill="#1f4a35"/>
+  <rect x="346" y="166" width="228" height="138" rx="4" fill="#fffdf9"/>
+  <rect x="440" y="320" width="40" height="26" fill="#1f4a35"/>
+  <rect x="410" y="344" width="100" height="12" rx="6" fill="#1f4a35"/>
+  <path d="M460 262 C440 252 432 232 436 214 C456 218 464 236 460 262 z" fill="#2f6b4c"/>
+  <path d="M460 262 C482 252 492 234 488 216 C468 220 458 238 460 262 z" fill="#1f4a35"/>
+  <rect x="457" y="258" width="6" height="30" fill="#2f6b4c"/>
+  <rect x="540" y="340" width="150" height="130" fill="#c58b2a"/>
+  <rect x="540" y="340" width="150" height="28" fill="#a8721f"/>
+  <rect x="603" y="340" width="26" height="130" fill="#1f4a35"/>
+</svg>

@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200" role="img" aria-label="가상 B복지센터 (가상 로고)">
+  <rect width="300" height="200" fill="#fffdf9"/>
+  <path d="M150 112 C108 86 112 46 150 62 C188 46 192 86 150 112 z" fill="#c58b2a"/>
+  <text x="150" y="162" text-anchor="middle" font-family="'Noto Sans KR','Malgun Gothic',sans-serif" font-size="26" font-weight="700" fill="#1f2a24">가상 B복지센터</text>
+</svg>

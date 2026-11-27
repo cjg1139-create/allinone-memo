@@ -6,10 +6,10 @@
 window.SITE = {
   // 소식 카드 4개 (분류 + 제목)
   news: [
-    { tag: "결과보고", title: "(가상) 첫 나눔 결과를 정리했습니다" },
-    { tag: "단체 이야기", title: "(가상) 가상 B복지센터가 새 PC로 시작한 이야기" },
-    { tag: "정비 일지", title: "(가상) 수거한 PC, 이렇게 정비합니다" },
-    { tag: "기업 나눔", title: "(가상) 가상 A사 임직원이 함께한 PC 나눔" }
+    { tag: "결과보고", title: "(가상) 첫 나눔 결과를 정리했습니다", img: "images/news/news-1-report.svg", alt: "결과보고: 막대가 올라가는 그래프 일러스트(가상)" },
+    { tag: "단체 이야기", title: "(가상) 가상 B복지센터가 새 PC로 시작한 이야기", img: "images/news/news-2-community.svg", alt: "단체 이야기: 새 PC 앞에서 일하는 사람 일러스트(가상)" },
+    { tag: "정비 일지", title: "(가상) 수거한 PC, 이렇게 정비합니다", img: "images/news/news-3-repair.svg", alt: "정비 일지: 뚜껑을 열고 점검하는 PC 일러스트(가상)" },
+    { tag: "기업 나눔", title: "(가상) 가상 A사 임직원이 함께한 PC 나눔", img: "images/news/news-4-corporate.svg", alt: "기업 나눔: PC가 담긴 상자와 새싹 일러스트(가상)" }
   ],
 
   // 함께한 사람들의 이야기 (가상 후기)
@@ -27,6 +27,13 @@ window.SITE = {
     { head: "단체 소식", items: ["(가상) 가상 B복지센터 대여 시작", "(가상) 가상 C환경단체 대여 시작"] }
   ],
 
-  // 파트너 로고 6칸 (가상 이름)
-  partners: ["가상 A사", "가상 B복지센터", "가상 C환경단체", "가상 D재단", "가상 E기업", "가상 F학교"]
+  // 파트너 로고 6칸 (가상 이름 + 가상 로고 그림). logo를 지우면 이름만 보입니다.
+  partners: [
+    { name: "가상 A사", logo: "images/partners/logo-a.svg" },
+    { name: "가상 B복지센터", logo: "images/partners/logo-b.svg" },
+    { name: "가상 C환경단체", logo: "images/partners/logo-c.svg" },
+    { name: "가상 D재단", logo: "images/partners/logo-d.svg" },
+    { name: "가상 E기업", logo: "images/partners/logo-e.svg" },
+    { name: "가상 F학교", logo: "images/partners/logo-f.svg" }
+  ]
 };

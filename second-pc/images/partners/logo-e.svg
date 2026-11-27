@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200" role="img" aria-label="가상 E기업 (가상 로고)">
+  <rect width="300" height="200" fill="#fffdf9"/>
+  <polygon points="150,36 190,106 110,106" fill="#2f6b4c"/><polygon points="150,62 172,100 128,100" fill="#fffdf9"/>
+  <text x="150" y="162" text-anchor="middle" font-family="'Noto Sans KR','Malgun Gothic',sans-serif" font-size="26" font-weight="700" fill="#1f2a24">가상 E기업</text>
+</svg>

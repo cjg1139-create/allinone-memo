@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-label="정비 일지: 뚜껑을 열고 점검하는 PC 본체">
+  <rect width="800" height="600" fill="#f4efe6"/>
+  <rect y="440" width="800" height="160" fill="#dfe9e0"/>
+  <rect x="230" y="110" width="260" height="340" rx="14" fill="#1f4a35"/>
+  <rect x="254" y="134" width="212" height="292" rx="6" fill="#fffdf9"/>
+  <rect x="280" y="160" width="160" height="90" rx="6" fill="#dfe9e0"/>
+  <circle cx="330" cy="205" r="28" fill="#2f6b4c"/><circle cx="330" cy="205" r="10" fill="#fffdf9"/>
+  <rect x="280" y="276" width="160" height="14" rx="4" fill="#cfc8ba"/>
+  <rect x="280" y="304" width="110" height="14" rx="4" fill="#cfc8ba"/>
+  <rect x="280" y="346" width="160" height="50" rx="6" fill="#d9c9a8"/>
+  <rect x="520" y="300" width="160" height="26" rx="13" fill="#c58b2a" transform="rotate(-35 600 313)"/>
+  <circle cx="640" cy="248" r="32" fill="none" stroke="#c58b2a" stroke-width="22"/>
+  <circle cx="570" cy="400" r="40" fill="#d9c9a8"/><circle cx="570" cy="400" r="16" fill="#f4efe6"/>
+</svg>

@@ -189,6 +189,11 @@ table.blank th { background: var(--green-100); color: var(--green-900); }
   .hero h1 { font-size: 1.6rem; }
 }
 
+.photo { overflow: hidden; }
+.photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.partner.has-logo { padding: 0; overflow: hidden; border-style: solid; border-color: var(--line); }
+.partner.has-logo img { width: 100%; height: 100%; object-fit: contain; display: block; }
+
 /* MVP 안내 띠: 가상 데이터임을 모든 페이지 맨 위에 밝힙니다 */
 .mvp-bar { background: var(--green-100); color: var(--ink); text-align: center; font-size: 13px; line-height: 1.5; padding: 8px 16px; border-bottom: 1px solid var(--line); }
 .mvp-bar b { color: var(--green-900); }

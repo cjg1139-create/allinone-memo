@@ -30,7 +30,8 @@
 
     // 소식
     $("#newsList").innerHTML = (S.news || []).map(function (n) {
-      return '<div class="card news-card"><div class="photo">사진 자리</div><span class="tag">' + esc(n.tag) + '</span><h3>' + esc(n.title) + '</h3></div>';
+      var pic = n.img ? '<img src="' + esc(n.img) + '" alt="' + esc(n.alt || "") + '">' : '사진 자리';
+      return '<div class="card news-card"><div class="photo">' + pic + '</div><span class="tag">' + esc(n.tag) + '</span><h3>' + esc(n.title) + '</h3></div>';
     }).join("");
 
     // 후기
@@ -49,7 +50,10 @@
 
     // 파트너 로고 칸
     $("#partnerList").innerHTML = (S.partners || []).map(function (p) {
-      return '<div class="partner">' + (p ? esc(p) : "파트너 로고") + '</div>';
+      var name = (p && typeof p === "object") ? p.name : p;
+      var logo = (p && typeof p === "object") ? p.logo : "";
+      if (logo) return '<div class="partner has-logo"><img src="' + esc(logo) + '" alt="' + esc(name || "파트너 로고") + ' (가상 로고)"></div>';
+      return '<div class="partner">' + (name ? esc(name) : "파트너 로고") + '</div>';
     }).join("");
 
     $("#newsletter").addEventListener("click", function (e) { e.preventDefault(); alert("뉴스레터 신청은 준비 중입니다."); });

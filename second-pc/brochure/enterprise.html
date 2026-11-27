@@ -2,6 +2,7 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>두번째 PC — 기업 담당자용 서비스 소개서</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&family=Noto+Serif+KR:wght@600;700&display=swap" rel="stylesheet">
@@ -52,6 +53,26 @@ h1,h2,h3 { font-family:var(--serif); color:var(--green-900); line-height:1.35; }
 .foot .info { font-size:12px; line-height:1.9; }
 .foot .info .blank { background:var(--on-green); color:var(--green-900); }
 .foot .info .url { display:inline-block; background:var(--on-green); color:var(--green-900); font-weight:700; font-size:12px; padding:0 8px; border-radius:4px; text-decoration:none; }
+
+/* ── 브라우저 화면으로 볼 때만: A4 고정을 풀고 화면 폭에 맞춥니다. (인쇄·PDF는 위의 A4 규칙 그대로) ── */
+@media screen {
+  html, body { background:var(--beige); }
+  .sheet { width:100%; max-width:980px; height:auto; margin:0 auto; padding:clamp(16px,4vw,48px); gap:clamp(18px,3vw,28px); overflow:visible; }
+  .hero { padding:clamp(20px,4vw,36px); }
+  .hero h1 { font-size:clamp(24px,5vw,34px); }
+  .hero p { font-size:clamp(14px,2.4vw,16px); }
+  .card p { font-size:13px; }
+  .list li { font-size:14px; }
+  .foot { margin-top:0; padding:clamp(20px,3vw,28px) clamp(20px,4vw,40px); }
+}
+@media screen and (max-width:720px) {
+  .c3, .c2 { grid-template-columns:1fr; }
+  .c4 { grid-template-columns:repeat(2,1fr); }
+  .foot { grid-template-columns:1fr; }
+}
+@media screen and (max-width:420px) {
+  .c4 { grid-template-columns:1fr; }
+}
 </style>
 </head>
 <body>

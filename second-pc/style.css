@@ -188,3 +188,8 @@ table.blank th { background: var(--green-100); color: var(--green-900); }
   .g3, .g4, .g2 { grid-template-columns: 1fr; }
   .hero h1 { font-size: 1.6rem; }
 }
+
+/* MVP 안내 띠: 가상 데이터임을 모든 페이지 맨 위에 밝힙니다 */
+.mvp-bar { background: var(--green-100); color: var(--ink); text-align: center; font-size: 13px; line-height: 1.5; padding: 8px 16px; border-bottom: 1px solid var(--line); }
+.mvp-bar b { color: var(--green-900); }
+.sample { display: inline-block; background: var(--green-100); color: var(--green-900); font-size: .75rem; font-weight: 700; line-height: 1.6; padding: 0 8px; border-radius: var(--r-sm); margin-left: 6px; vertical-align: middle; }

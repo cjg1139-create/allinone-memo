@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>두번째 PC — 기업 담당자용 서비스 소개서</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&family=Noto+Serif+KR:wght@600;700&display=swap" rel="stylesheet">
+<style>
+/* ★ 색은 디자인 시스템 값입니다. 빈칸([입력 예정])은 확정되면 글자만 바꾸세요. */
+:root {
+  --green-900:#1f4a35; --green-700:#2f6b4c; --green-100:#dfe9e0;
+  --beige:#f4efe6; --white:#fffdf9; --ink:#1f2a24; --muted:#55605a; --line:#cfc8ba;
+  --on-green:#fffdf9; --on-green-muted:#cfe0d3;
+  --serif:"Noto Serif KR","Nanum Myeongjo","Batang",serif;
+  --sans:"Noto Sans KR","Malgun Gothic","Apple SD Gothic Neo",sans-serif;
+}
+@page { size: A4; margin: 0; }
+* { box-sizing:border-box; margin:0; padding:0; }
+html, body { background:#fff; }
+body { font-family:var(--sans); color:var(--ink); word-break:keep-all; line-height:1.55; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+.sheet { width:210mm; height:297mm; background:var(--beige); padding:14mm 14mm 12mm; display:flex; flex-direction:column; gap:7mm; overflow:hidden; }
+h1,h2,h3 { font-family:var(--serif); color:var(--green-900); line-height:1.35; }
+
+.top { display:flex; justify-content:space-between; align-items:baseline; }
+.logo { font-family:var(--serif); font-weight:700; font-size:20px; color:var(--green-900); }
+.for { font-size:12px; color:var(--muted); }
+
+.hero { background:var(--green-900); color:var(--on-green); border-radius:16px; padding:9mm 10mm; }
+.hero h1 { color:var(--on-green); font-size:30px; line-height:1.4; margin-bottom:10px; }
+.hero p { color:var(--on-green-muted); font-size:14px; }
+
+.label { font-size:12px; font-weight:700; color:var(--muted); letter-spacing:.08em; margin-bottom:6px; }
+.row { display:grid; gap:10px; }
+.c3 { grid-template-columns:repeat(3,1fr); }
+.c4 { grid-template-columns:repeat(4,1fr); }
+.c2 { grid-template-columns:repeat(2,1fr); }
+.card { background:var(--white); border:1px solid var(--line); border-radius:16px; padding:12px 14px; box-shadow:0 1px 2px rgba(31,42,36,.08); }
+.card h3 { font-size:15px; margin-bottom:4px; }
+.card p { font-size:11.5px; color:var(--muted); line-height:1.55; }
+.tag { display:inline-block; background:var(--green-100); color:var(--green-900); font-size:10.5px; font-weight:500; padding:1px 7px; border-radius:4px; margin-bottom:6px; }
+.no { font-size:12px; font-weight:700; color:var(--muted); margin-bottom:2px; }
+.step h3 { font-size:16px; }
+.list { list-style:none; }
+.list li { font-size:12.5px; padding:3px 0 3px 14px; position:relative; }
+.list li::before { content:""; position:absolute; left:0; top:11px; width:6px; height:6px; border-radius:50%; background:var(--green-900); }
+.blank { display:inline-block; background:var(--green-100); color:var(--green-900); font-weight:700; font-size:11px; padding:0 7px; border-radius:4px; }
+.sub { font-size:11.5px; color:var(--muted); margin-top:6px; }
+
+.foot { margin-top:auto; background:var(--green-900); color:var(--on-green); border-radius:16px; padding:6mm 10mm; display:grid; grid-template-columns:1.1fr 1fr; gap:14px; align-items:center; }
+.foot b { font-family:var(--serif); font-size:17px; display:block; margin-bottom:3px; }
+.foot span { font-size:11.5px; color:var(--on-green-muted); }
+.foot .info { font-size:12px; line-height:1.9; }
+.foot .info .blank { background:var(--on-green); color:var(--green-900); }
+.foot .info .url { display:inline-block; background:var(--on-green); color:var(--green-900); font-weight:700; font-size:12px; padding:0 8px; border-radius:4px; text-decoration:none; }
+</style>
+</head>
+<body>
+<div class="sheet" id="sheet">
+
+  <div class="top">
+    <div class="logo">두번째 PC</div>
+    <div class="for">서비스 소개서</div>
+  </div>
+
+  <div class="hero">
+    <h1>회사에서 은퇴한 PC가,<br>누군가의 첫 업무 PC가 됩니다</h1>
+    <p>수거와 데이터 삭제는 저희가 맡을게요. 기업은 PC와 작은 나눔만 보내 주세요.</p>
+  </div>
+
+  <div>
+    <div class="label">왜 필요한가요</div>
+    <div class="row c3">
+      <div class="card"><h3>쓰지 않는 PC</h3><p>기업에는 쓰지 않는 PC가 생기지만, 처리에 비용이 듭니다.</p></div>
+      <div class="card"><h3>PC가 필요한 단체</h3><p>비영리단체는 PC 구입·대여 비용이 부담입니다.</p></div>
+      <div class="card"><h3>나눔 실적</h3><p>기업은 ESG 경영 차원의 나눔 실적이 필요합니다.</p></div>
+    </div>
+  </div>
+
+  <div>
+    <div class="label">나눔 구조 · 기업의 작은 나눔이, 단체의 대여료를 낮춥니다</div>
+    <div class="row c3">
+      <div class="card"><span class="tag">기업이 보내는 것</span><h3>쓰지 않는 PC + 나눔 후원금</h3><p>처리 비용이 아니라, PC가 다시 쓰이도록 함께 후원합니다.</p></div>
+      <div class="card"><span class="tag">두번째 PC가 하는 일</span><h3>무료 수거 · 데이터 삭제 · 정비</h3><p>기업별 데이터 삭제 증명서를 발급합니다. (방법·양식 확정 중)</p></div>
+      <div class="card"><span class="tag">단체가 받는 것</span><h3>아주 낮은 대여료의 PC</h3><p>기업 후원 덕분에 대여료 부담이 크게 줄어듭니다.</p></div>
+    </div>
+  </div>
+
+  <div>
+    <div class="label">진행 순서</div>
+    <div class="row c4">
+      <div class="card step"><div class="no">01</div><h3>신청</h3><p>나눌 PC 정보를 알려 주세요.</p></div>
+      <div class="card step"><div class="no">02</div><h3>무료 수거</h3><p>두번째 PC가 PC를 거두어 갑니다.</p></div>
+      <div class="card step"><div class="no">03</div><h3>삭제 · 정비</h3><p>데이터를 지우고 쓸 수 있게 정비합니다.</p></div>
+      <div class="card step"><div class="no">04</div><h3>단체 연결</h3><p>운영팀이 확인하고 단체에 연결합니다.</p></div>
+    </div>
+  </div>
+
+  <div class="row c2">
+    <div class="card">
+      <h3>기업이 얻는 것</h3>
+      <ul class="list">
+        <li>ESG 나눔 활동 실적</li>
+        <li>수거·데이터 삭제·정비는 두번째 PC가 맡습니다</li>
+        <li>데이터 삭제 증명서 (방법·양식 확정 중)</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>후원금은 투명하게 공개합니다</h3>
+      <ul class="list">
+        <li>쓰임: PC 정비, 단체 대여료 지원</li>
+        <li>사용 내역은 ESG 나눔 리포트에 담아 공개</li>
+      </ul>
+      <p class="sub">기본 금액 <span class="blank">[금액] 미정</span> · 후원 적용 금액 <span class="blank">[금액] 미정</span></p>
+    </div>
+  </div>
+
+  <div class="foot">
+    <div><b>PC 나누기, 함께해 주세요</b><span>버려지는 PC 한 대가 아니라, 이어지는 활동 하나를 봅니다.</span></div>
+    <div class="info">
+      신청: <a class="url" href="https://second-pc-site.vercel.app">second-pc-site.vercel.app</a><br>
+      문의: <span class="blank">[연락처 입력 예정]</span><br>
+      사업자 정보: <span class="blank">[입력 예정]</span>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
